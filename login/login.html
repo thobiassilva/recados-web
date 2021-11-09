@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Admin - Entrar</title>
+  </head>
+
+  <body>
+    <div class="container-fluid p-0">
+      <div class="row p-0 align-items-end">
+        <div class="col-12 col-md-6 p-0">
+          <div class="image"></div>
+        </div>
+        <div class="content col-8 col-md-4 offset-md-1 offset-2 text-center">
+          <h1 class="text-muted">ENTRAR NO SISTEMA DE RECADOS</h1>
+          <br />
+          <div class="vstack gap-3 mx-auto">
+            <div class="input-group">
+              <input id="username" type="text" aria-label="User name" class="form-control" placeholder="User name" />
+              <input id="password" type="password" aria-label="Password" class="form-control" placeholder="Password" />
+            </div>
+            <button type="button" class="col-12 btn btn-success" onclick="signIn()">Entrar</button>
+            <div class="text-center">
+              <a href="../register/register.html">Criar conta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="loginController.js"></script>
+  </body>
+</html>
