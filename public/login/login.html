@@ -26,10 +26,28 @@
           <br />
           <div class="vstack gap-3 mx-auto">
             <div class="input-group">
-              <input id="username" type="text" aria-label="User name" class="form-control" placeholder="User name" />
-              <input id="password" type="password" aria-label="Password" class="form-control" placeholder="Password" />
+              <input
+                id="username"
+                type="text"
+                aria-label="User name"
+                class="form-control"
+                placeholder="User name"
+              />
+              <input
+                id="password"
+                type="password"
+                aria-label="Password"
+                class="form-control"
+                placeholder="Password"
+              />
             </div>
-            <button type="button" class="col-12 btn btn-success" onclick="signIn()">Entrar</button>
+            <button
+              type="button"
+              class="col-12 btn btn-success"
+              onclick="signIn()"
+            >
+              Entrar
+            </button>
             <div class="text-center">
               <a href="../register/register.html">Criar conta</a>
             </div>
@@ -42,7 +60,7 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
-
-    <script src="loginController.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="login.controller.js"></script>
   </body>
 </html>
