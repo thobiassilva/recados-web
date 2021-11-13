@@ -95,10 +95,6 @@ async function update(uid) {
 
     if (!title || !detail) return alert('Informe uma descrição e um detalhe');
 
-    console.log(uid);
-    console.log(title);
-    console.log(detail);
-
     try {
         result = await api.put('/messages/' + uid, new Message(title, detail));
 
