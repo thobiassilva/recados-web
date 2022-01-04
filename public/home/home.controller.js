@@ -1,4 +1,5 @@
-axios.defaults.baseURL = 'http://localhost:8082';
+axios.defaults.baseURL = 'https://recados-api-thobiassilva.herokuapp.com';
+// http://localhost:8082
 // https://recados-api-thobiassilva.herokuapp.com
 
 let myRemoveModal = new bootstrap.Modal(document.getElementById('removeModal'));
