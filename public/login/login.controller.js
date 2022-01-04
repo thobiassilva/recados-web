@@ -1,6 +1,6 @@
-const api = axios.create({
-    baseURL: "https://recados-api-thobiassilva.herokuapp.com"
-});
+axios.defaults.baseURL = 'http://localhost:8082';
+// https://recados-api-thobiassilva.herokuapp.com
+// axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 
 async function signIn() {
     let result;
@@ -12,7 +12,7 @@ async function signIn() {
         return;
     }
     try {
-        result = await api.post('/login', { login: username, password: password });
+        result = await axios.post('/login', { login: username, password: password });
 
     } catch (error) {
         alert(error.response.data.message);
@@ -20,7 +20,7 @@ async function signIn() {
 
     localStorage.setItem('userLoggedToken', JSON.stringify(result.data.data));
 
-    location.href = '../home/home.html';
+    location.href = '../home/';
 }
 
 

@@ -1,7 +1,7 @@
 // Verifica se o usuario esta logado
 if (JSON.parse(localStorage.getItem('userLoggedToken'))) {
-    location.href = '../home/home.html';
+    location.href = '../home/';
 } else {
-    location.href = "./login/login.html";
+    location.href = "./login/";
 }
 

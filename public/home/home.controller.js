@@ -1,3 +1,6 @@
+axios.defaults.baseURL = 'http://localhost:8082';
+// https://recados-api-thobiassilva.herokuapp.com
+
 let myRemoveModal = new bootstrap.Modal(document.getElementById('removeModal'));
 let myUpdateModal = new bootstrap.Modal(document.getElementById('updateModal'));
 
@@ -6,15 +9,14 @@ let userUid = JSON.parse(localStorage.getItem('userLoggedToken'));
 
 // Verifica se o usuario esta logado
 if (!userUid) {
-    location.href = "../login/login.html";
+    location.href = "../login/";
 }
+
+axios.defaults.headers.common['Authorization'] = userUid;
 
 let messages = [];
 
-const api = axios.create({
-    baseURL: "https://recados-api-thobiassilva.herokuapp.com",
-    headers: { Authorization: userUid }
-});
+
 
 
 //Gera as linhas da tabela
@@ -48,7 +50,7 @@ async function load() {
     }
 
     try {
-        result = await api.get('/messages');
+        result = await axios.get('/messages');
     } catch (error) {
         alert(error.response.data.message);
     }
@@ -79,7 +81,7 @@ async function insert() {
     if (!title || !detail) return alert('Informe uma descrição e um detalhe');
 
     try {
-        result = await api.post('/messages', new Message(title, detail));
+        result = await axios.post('/messages', new Message(title, detail));
     } catch (error) {
         alert(error.response.data.message);
     }
@@ -96,7 +98,7 @@ async function update(uid) {
     if (!title || !detail) return alert('Informe uma descrição e um detalhe');
 
     try {
-        result = await api.put('/messages/' + uid, new Message(title, detail));
+        result = await axios.put('/messages/' + uid, new Message(title, detail));
 
     } catch (error) {
         alert(error.response.data.message);
@@ -108,7 +110,7 @@ async function update(uid) {
 
 async function remove(uid) {
     try {
-        result = await api.delete('/messages/' + uid);
+        result = await axios.delete('/messages/' + uid);
     } catch (error) {
         alert(error.response.data.message);
     }
@@ -119,5 +121,5 @@ async function remove(uid) {
 
 function logout() {
     localStorage.removeItem('userLoggedToken');
-    location.href = "../login/login.html";
+    location.href = "../login/";
 }

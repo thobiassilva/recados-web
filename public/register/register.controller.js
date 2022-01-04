@@ -1,5 +1,6 @@
 const api = axios.create({
-    baseURL: "https://recados-api-thobiassilva.herokuapp.com"
+    // baseURL: "https://recados-api-thobiassilva.herokuapp.com"
+    baseURL: "http://localhost:8082"
 });
 
 async function signUp() {
@@ -25,7 +26,7 @@ async function signUp() {
 
     localStorage.setItem('userLoggedToken', JSON.stringify(result.data.data));
 
-    location.href = '../home/home.html';
+    location.href = '../home/';
 }
 
 
