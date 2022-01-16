@@ -17,7 +17,7 @@ async function signUp() {
         return;
     }
     try {
-        result = await api.post('/register', { login: username, password: password });
+        result = await axios.post('/register', { login: username, password: password });
 
     } catch (error) {
         alert(error.response.data.message);
